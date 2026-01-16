@@ -1,16 +1,15 @@
-## Hi there 👋
+# robertgonek.github.io
 
-<!--
-**rgonek/rgonek** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Personal portfolio site. Built with plain HTML and CSS using the Solarized Light theme.
 
-Here are some ideas to get you started:
+## Local Development
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Open `index.html` in a browser, or use a local server:
+
+```bash
+npx serve .
+```
+
+## Deployment
+
+Deployed automatically via GitHub Pages from the `main` branch.
