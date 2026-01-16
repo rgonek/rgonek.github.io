@@ -9,50 +9,162 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="noise-overlay"></div>
+    <div class="geometric-accent accent-1"></div>
+    <div class="geometric-accent accent-2"></div>
+    <div class="geometric-accent accent-3"></div>
+
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">RG</a>
+            <a href="#" class="logo">
+                <span class="logo-bracket">{</span>RG<span class="logo-bracket">}</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about"><span class="nav-number">01</span>About</a></li>
+                <li><a href="#skills"><span class="nav-number">02</span>Skills</a></li>
+                <li><a href="#experience"><span class="nav-number">03</span>Journey</a></li>
+                <li><a href="#contact"><span class="nav-number">04</span>Connect</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <p class="greeting">Hi, I'm</p>
-            <h1>Robert Gonek</h1>
-            <p class="tagline">Senior .NET Engineer</p>
-            <p class="intro">Building robust, scalable software solutions for over 10 years.<br>AI-augmented development enthusiast. Clean code advocate.</p>
-            <div class="hero-links">
-                <a href="https://github.com/rgonek" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
-                <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+            <div class="hero-grid">
+                <div class="hero-main">
+                    <div class="hero-badge animate-in">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span>Microsoft Certified</span>
+                        <strong>AZ-204</strong>
+                        <span class="badge-label">Azure Developer Associate</span>
+                    </div>
+                    <p class="greeting animate-in" style="animation-delay: 0.1s">Senior .NET Engineer</p>
+                    <h1 class="animate-in" style="animation-delay: 0.2s">Robert<br><span class="name-accent">Gonek</span></h1>
+                    <p class="intro animate-in" style="animation-delay: 0.3s">10+ years crafting robust, scalable solutions.<br>AI-augmented workflows. Clean architecture. Cloud-native.</p>
+                    <div class="hero-stats animate-in" style="animation-delay: 0.4s">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">.NET</span>
+                            <span class="stat-label">Core Stack</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">Azure</span>
+                            <span class="stat-label">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="hero-links animate-in" style="animation-delay: 0.5s">
+                        <a href="https://github.com/rgonek" target="_blank" rel="noopener" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" rel="noopener" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual animate-in" style="animation-delay: 0.6s">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">profile.cs</span>
+                        </div>
+                        <pre class="code-content"><code><span class="code-keyword">public class</span> <span class="code-class">Developer</span>
+{
+    <span class="code-keyword">public string</span> Focus =>
+        <span class="code-string">"Clean Architecture"</span>;
+
+    <span class="code-keyword">public bool</span> UsesAI => <span class="code-bool">true</span>;
+
+    <span class="code-keyword">public string[]</span> Values => [
+        <span class="code-string">"Quality"</span>,
+        <span class="code-string">"Documentation"</span>,
+        <span class="code-string">"Continuous Learning"</span>
+    ];
+}</code></pre>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I'm a Senior .NET Engineer passionate about building clean, maintainable software. With experience spanning microservices architecture, cloud infrastructure (Azure), and legacy modernization, I bring a pragmatic approach to solving complex technical challenges.</p>
-                <p>I extensively leverage AI in my development workflow, staying current with the latest advancements in AI-assisted engineering. I believe in leaving codebases better than I found them - every task is an opportunity to improve code quality, add documentation, and create clear C4 diagrams.</p>
-                <p>When I'm not coding, you'll find me rock climbing, playing chess, or diving into technical books. Recent reads include "AI Engineering" by Chip Huyen, "Clean Architecture" by Robert C. Martin, and "Team Topologies" by Matthew Skelton.</p>
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-lead">Building clean, maintainable software with a pragmatic approach to complex technical challenges.</p>
+                    <p>I bring experience spanning microservices architecture, Azure cloud infrastructure, and legacy modernization. I extensively leverage AI in my development workflow and believe in leaving codebases better than I found them.</p>
+                    <p>Every task is an opportunity to improve code quality, add documentation, and create clear C4 diagrams.</p>
+                </div>
+                <div class="about-interests">
+                    <h3>When I'm not coding</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <span class="interest-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            </span>
+                            <span>Technical Books</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                            </span>
+                            <span>Rock Climbing</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                            </span>
+                            <span>Chess</span>
+                        </div>
+                    </div>
+                    <div class="reading-list">
+                        <h4>Recent Reads</h4>
+                        <div class="books">
+                            <span class="book">AI Engineering</span>
+                            <span class="book">Clean Architecture</span>
+                            <span class="book">Team Topologies</span>
+                            <span class="book">Vibe Coding</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="section section-alt">
         <div class="container">
-            <h2>Skills & Expertise</h2>
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Skills & Expertise</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="skills-grid">
                 <div class="skill-category">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
                     <h3>Backend</h3>
                     <ul>
                         <li>C# / .NET Core / .NET 8+</li>
@@ -63,15 +175,21 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </div>
                     <h3>Cloud & DevOps</h3>
                     <ul>
-                        <li>Microsoft Azure (AZ-204)</li>
+                        <li>Microsoft Azure</li>
                         <li>Azure DevOps / CI/CD</li>
                         <li>Docker & Containerization</li>
                         <li>Infrastructure as Code</li>
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/></svg>
+                    </div>
                     <h3>Practices</h3>
                     <ul>
                         <li>AI-Augmented Development</li>
@@ -88,7 +206,11 @@
     <!-- Projects section - hidden for now, uncomment when ready
     <section id="projects" class="section">
         <div class="container">
-            <h2>Projects</h2>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Projects</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="projects-grid">
                 <article class="project-card">
                     <h3>Project Name</h3>
@@ -106,72 +228,70 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">March 2025 - Present</span>
-                        <h3>Senior Software Engineer</h3>
-                        <p class="company">Benefit Systems International S.A.</p>
-                    </div>
-                </article>
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 2021 - February 2025</span>
-                        <h3>Senior Full Stack .NET Developer</h3>
-                        <p class="company">Ultrico</p>
-                        <p>Designed and developed microservice solutions on Azure. Led legacy modernization efforts including migration to latest .NET versions and cloud infrastructure.</p>
-                    </div>
-                </article>
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">November 2020 - April 2021</span>
-                        <h3>Senior Full Stack .NET Developer</h3>
-                        <p class="company">ITMAGINATION</p>
-                        <p>Collaborated within Scrum teams, designed solutions based on business requirements, and mentored developers on code quality.</p>
-                    </div>
-                </article>
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">April 2015 - October 2020</span>
-                        <h3>Full Stack .NET Developer</h3>
-                        <p class="company">Ultrico</p>
-                        <p>Built microservice solutions, developed comprehensive test suites, and created SQL scripts for data management and reporting.</p>
-                    </div>
-                </article>
-                <article class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2010 - 2015</span>
-                        <h3>Earlier Career</h3>
-                        <p class="company">NovaPraxis, Grupa Manubia, TimeFrame Software, Contempro</p>
-                        <p>Built foundations in .NET development across various domains including BI applications, document management, e-commerce data collection, and survey systems.</p>
-                    </div>
-                </article>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Professional Journey</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="certification">
-                <span class="cert-badge">AZ-204</span>
-                <span>Microsoft Certified: Azure Developer Associate</span>
+            <div class="timeline-horizontal">
+                <div class="timeline-track">
+                    <article class="timeline-card current">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-dot"></div>
+                        <h3>Senior Software Engineer</h3>
+                        <p class="company">Benefit Systems International</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-dot"></div>
+                        <h3>Senior Full Stack Developer</h3>
+                        <p class="company">Ultrico</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-dot"></div>
+                        <h3>Senior Full Stack Developer</h3>
+                        <p class="company">ITMAGINATION</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-dot"></div>
+                        <h3>Full Stack Developer</h3>
+                        <p class="company">Ultrico</p>
+                    </article>
+                    <article class="timeline-card">
+                        <div class="timeline-year">2010</div>
+                        <div class="timeline-dot"></div>
+                        <h3>Early Career</h3>
+                        <p class="company">NovaPraxis, Manubia, TimeFrame, Contempro</p>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section section-alt">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">Interested in collaborating or have a question? Feel free to reach out.</p>
+            <div class="section-header section-header-center">
+                <span class="section-number">04</span>
+                <h2>Let's Connect</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="contact-intro">Open to interesting conversations and collaboration opportunities.</p>
             <div class="contact-links">
-                <a href="https://github.com/rgonek" target="_blank" rel="noopener" class="contact-item">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    <span>GitHub</span>
+                <a href="https://github.com/rgonek" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-handle">@rgonek</span>
                 </a>
-                <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" rel="noopener" class="contact-item">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    <span>LinkedIn</span>
+                <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-handle">/in/robertgonek</span>
                 </a>
             </div>
         </div>
@@ -179,7 +299,10 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Robert Gonek</p>
+            <div class="footer-content">
+                <span class="footer-logo">{RG}</span>
+                <p>&copy; 2025 Robert Gonek</p>
+            </div>
         </div>
     </footer>
 </body>
