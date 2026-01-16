@@ -1,12 +1,19 @@
-// Neo-brutalist interactions and animations
+/* ============================================
+   NEO-BRUTALIST PERSONAL PAGE
+   JavaScript Interactions
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
+    initSmoothScroll();
     initNavHighlight();
-    initBookHoverEffects();
     initParallaxEffects();
 });
 
-// Intersection Observer for scroll animations
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+
 function initScrollAnimations() {
     const observerOptions = {
         root: null,
@@ -17,46 +24,78 @@ function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                entry.target.classList.add('visible');
 
                 // Stagger children animations
                 const children = entry.target.querySelectorAll('.stagger-child');
                 children.forEach((child, index) => {
-                    child.style.animationDelay = `${index * 0.1}s`;
-                    child.classList.add('animate-in');
+                    child.style.transitionDelay = `${index * 0.1}s`;
+                    child.classList.add('visible');
                 });
             }
         });
     }, observerOptions);
 
-    // Observe sections
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.add('animate-target');
-        observer.observe(section);
+    // Add animation classes and observe
+    const animatedElements = document.querySelectorAll(
+        '.about-card, .philosophy-card, .timeline-item, .book-card, .hobby-card, .contact-link'
+    );
+
+    animatedElements.forEach((el, index) => {
+        el.classList.add('fade-in');
+        el.style.transitionDelay = `${(index % 4) * 0.1}s`;
+        observer.observe(el);
     });
 
-    // Add stagger-child class to timeline items
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        item.classList.add('stagger-child');
+    // Section labels
+    document.querySelectorAll('.section-label').forEach(label => {
+        label.classList.add('slide-in-left');
+        observer.observe(label);
     });
 
-    document.querySelectorAll('.philosophy-card').forEach(card => {
-        card.classList.add('stagger-child');
-    });
+    // Philosophy statement
+    const statement = document.querySelector('.philosophy-statement');
+    if (statement) {
+        statement.classList.add('fade-in');
+        observer.observe(statement);
+    }
+}
 
-    document.querySelectorAll('.interest-card').forEach(card => {
-        card.classList.add('stagger-child');
+/* ============================================
+   SMOOTH SCROLL
+   ============================================ */
+
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const navHeight = document.querySelector('.nav').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 }
 
-// Highlight active nav link based on scroll position
+/* ============================================
+   NAV HIGHLIGHT
+   ============================================ */
+
 function initNavHighlight() {
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
     const observerOptions = {
         root: null,
-        rootMargin: '-50% 0px -50% 0px',
+        rootMargin: '-20% 0px -80% 0px',
         threshold: 0
     };
 
@@ -76,131 +115,160 @@ function initNavHighlight() {
 
     sections.forEach(section => observer.observe(section));
 
-    // Add active styles
+    // Add active styles dynamically
     const style = document.createElement('style');
     style.textContent = `
         .nav-link.active {
-            background: var(--base02);
-            color: var(--base3);
-        }
-
-        .animate-target {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .animate-target.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-child {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .stagger-child.animate-in {
-            opacity: 1;
-            transform: translateY(0);
+            background-color: var(--yellow);
+            transform: translate(-2px, -2px);
+            box-shadow: var(--shadow-sm);
         }
     `;
     document.head.appendChild(style);
 }
 
-// Book hover effects with tilt
-function initBookHoverEffects() {
-    const books = document.querySelectorAll('.book');
+/* ============================================
+   PARALLAX EFFECTS
+   ============================================ */
 
-    books.forEach(book => {
-        book.addEventListener('mouseenter', (e) => {
-            const randomRotation = (Math.random() - 0.5) * 10;
-            e.target.style.transform = `translateY(-12px) rotate(${randomRotation}deg)`;
-        });
-
-        book.addEventListener('mouseleave', (e) => {
-            e.target.style.transform = '';
-        });
-    });
-}
-
-// Subtle parallax effects
 function initParallaxEffects() {
-    const codeBlock = document.querySelector('.code-block');
+    // Subtle parallax on hero elements
+    const heroTitle = document.querySelector('.hero-title');
+    const heroBadge = document.querySelector('.hero-badge');
 
-    if (codeBlock) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.1;
+    let ticking = false;
 
-            if (scrolled < window.innerHeight) {
-                codeBlock.style.transform = `rotate(1deg) translateY(${rate}px)`;
-            }
-        }, { passive: true });
-    }
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
 
-    // Add mouse move effect on hero
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const { innerWidth, innerHeight } = window;
+                if (scrollY < window.innerHeight) {
+                    const parallaxAmount = scrollY * 0.3;
+                    const opacityAmount = 1 - (scrollY / window.innerHeight);
 
-            const xPos = (clientX / innerWidth - 0.5) * 10;
-            const yPos = (clientY / innerHeight - 0.5) * 10;
+                    if (heroTitle) {
+                        heroTitle.style.transform = `translateY(${parallaxAmount}px)`;
+                        heroTitle.style.opacity = Math.max(0, opacityAmount);
+                    }
 
-            if (codeBlock) {
-                codeBlock.style.transform = `rotate(${1 + xPos * 0.2}deg) translate(${xPos}px, ${yPos}px)`;
-            }
-        });
-    }
-}
+                    if (heroBadge) {
+                        heroBadge.style.transform = `translateY(${parallaxAmount * 0.5}px)`;
+                    }
+                }
 
-// Smooth scroll for nav links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            const navHeight = document.querySelector('.nav').offsetHeight;
-            const targetPosition = targetElement.offsetTop - navHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+                ticking = false;
             });
+
+            ticking = true;
         }
     });
+}
+
+/* ============================================
+   EASTER EGG: Konami Code
+   ============================================ */
+
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            activateEasterEgg();
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
 });
 
-// Add brutalist hover sound effect (optional - commented out by default)
-/*
-function initHoverSounds() {
-    const hoverElements = document.querySelectorAll('.stat-box, .link-box, .philosophy-card, .interest-card');
+function activateEasterEgg() {
+    document.body.style.transition = 'filter 0.5s ease';
+    document.body.style.filter = 'hue-rotate(180deg)';
 
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...');
-            audio.volume = 0.1;
-            audio.play().catch(() => {});
+    setTimeout(() => {
+        document.body.style.filter = 'hue-rotate(0deg)';
+    }, 3000);
+
+    // Show a fun message
+    const message = document.createElement('div');
+    message.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--yellow);
+        border: 4px solid var(--black);
+        padding: 2rem;
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        z-index: 10000;
+        box-shadow: 8px 8px 0 var(--black);
+        animation: popIn 0.3s ease;
+    `;
+    message.textContent = 'YOU FOUND THE SECRET!';
+    document.body.appendChild(message);
+
+    const popStyle = document.createElement('style');
+    popStyle.textContent = `
+        @keyframes popIn {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            80% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+    `;
+    document.head.appendChild(popStyle);
+
+    setTimeout(() => {
+        message.remove();
+    }, 2000);
+}
+
+/* ============================================
+   CURSOR TRAIL (subtle)
+   ============================================ */
+
+let mouseX = 0;
+let mouseY = 0;
+let trailElements = [];
+const trailCount = 5;
+
+// Only enable on larger screens
+if (window.innerWidth > 1024) {
+    for (let i = 0; i < trailCount; i++) {
+        const trail = document.createElement('div');
+        trail.style.cssText = `
+            position: fixed;
+            width: ${10 - i * 1.5}px;
+            height: ${10 - i * 1.5}px;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            pointer-events: none;
+            z-index: 9998;
+            opacity: ${1 - i * 0.2};
+            transition: transform ${0.1 + i * 0.05}s ease;
+        `;
+        document.body.appendChild(trail);
+        trailElements.push(trail);
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        trailElements.forEach((trail, index) => {
+            setTimeout(() => {
+                trail.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+            }, index * 30);
         });
     });
 }
-*/
 
-// Console easter egg
-console.log(`
-%c
-  ____        _               _      ____                  _
- |  _ \\ ___  | |__   ___ _ __| |_   / ___| ___  _ __   ___| | __
- | |_) / _ \\ | '_ \\ / _ \\ '__| __| | |  _ / _ \\| '_ \\ / _ \\ |/ /
- |  _ < (_) || |_) |  __/ |  | |_  | |_| | (_) | | | |  __/   <
- |_| \\_\\___/ |_.__/ \\___|_|   \\__|  \\____|\\___/|_| |_|\\___|_|\\_\\
+/* ============================================
+   TYPING EFFECT FOR HERO (optional enhancement)
+   ============================================ */
 
-`, 'font-family: monospace; color: #cb4b16;');
-
-console.log('%c Senior .NET Engineer | AI-Augmented Developer', 'color: #268bd2; font-size: 14px;');
-console.log('%c Always leaving code better than I found it.', 'color: #859900; font-style: italic;');
+// Could be enabled for a more dynamic feel
+// Currently disabled to maintain the bold static design

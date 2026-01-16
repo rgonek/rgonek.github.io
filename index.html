@@ -6,324 +6,313 @@
     <title>Robert Gonek | Senior .NET Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="noise"></div>
+    <div class="grain-overlay"></div>
 
     <nav class="nav">
-        <div class="nav-brand">RG</div>
+        <div class="nav-logo">RG<span class="blink">_</span></div>
         <div class="nav-links">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#philosophy" class="nav-link">Philosophy</a>
-            <a href="#interests" class="nav-link">Interests</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#philosophy" class="nav-link">PHILOSOPHY</a>
+            <a href="#experience" class="nav-link">EXPERIENCE</a>
+            <a href="#reading" class="nav-link">READING</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <div class="hero-label">Senior .NET Engineer</div>
-            <h1 class="hero-title">
-                <span class="hero-name">Robert</span>
-                <span class="hero-name">Gonek</span>
-            </h1>
-            <p class="hero-subtitle">14+ years building software.<br>Currently crafting microservices at <span class="highlight">Benefit Systems</span>.</p>
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <span class="stat-number">14+</span>
-                    <span class="stat-label">Years</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">.NET</span>
-                    <span class="stat-label">Core Stack</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">Azure</span>
-                    <span class="stat-label">Cloud</span>
-                </div>
-                <div class="stat-box accent">
-                    <span class="stat-number">AI</span>
-                    <span class="stat-label">Augmented</span>
-                </div>
+        <div class="hero-badge">SENIOR .NET ENGINEER</div>
+        <h1 class="hero-title">
+            <span class="hero-line">I DON'T BUILD</span>
+            <span class="hero-line highlight">SHINY DEMOS.</span>
+            <span class="hero-line">I MAKE YOUR</span>
+            <span class="hero-line highlight-alt">CODE BETTER.</span>
+        </h1>
+        <div class="hero-meta">
+            <div class="meta-item">
+                <span class="meta-number">10+</span>
+                <span class="meta-label">YEARS</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+                <span class="meta-number">.NET</span>
+                <span class="meta-label">STACK</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+                <span class="meta-number">AI</span>
+                <span class="meta-label">AUGMENTED</span>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="code-block">
-                <div class="code-header">
-                    <span class="code-dot"></span>
-                    <span class="code-dot"></span>
-                    <span class="code-dot"></span>
-                </div>
-                <pre class="code-content"><span class="code-keyword">public class</span> <span class="code-class">Developer</span>
-{
-    <span class="code-keyword">public string</span> Name => <span class="code-string">"Robert Gonek"</span>;
-    <span class="code-keyword">public int</span> YearsOfExperience => <span class="code-number">14</span>;
-
-    <span class="code-keyword">public bool</span> LeavesCodeBetterThanFound
-        => <span class="code-keyword">true</span>;
-
-    <span class="code-keyword">public</span> IEnumerable&lt;<span class="code-class">Principle</span>&gt; CoreValues()
-    {
-        <span class="code-keyword">yield return</span> <span class="code-class">Principle</span>.CleanCode;
-        <span class="code-keyword">yield return</span> <span class="code-class">Principle</span>.Documentation;
-        <span class="code-keyword">yield return</span> <span class="code-class">Principle</span>.C4Diagrams;
-        <span class="code-keyword">yield return</span> <span class="code-class">Principle</span>.AIAugmented;
-    }
-}</pre>
-            </div>
+        <div class="hero-scroll">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
-    <section id="about" class="section about">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">About</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <p class="about-intro">I build enterprise software with <em>precision</em> and <em>care</em>.</p>
-                <p>Based in Krak&oacute;w, Poland, I specialize in .NET microservices, Azure cloud infrastructure, and modernizing legacy systems. I don't just write code&mdash;I improve every codebase I touch.</p>
-                <p>I embrace AI as a multiplier, staying current with every nuance of agentic workflows and AI-augmented development. The future is human-AI collaboration, and I'm already there.</p>
+    <section id="about" class="about">
+        <div class="section-label">01 — ABOUT</div>
+        <div class="about-grid">
+            <div class="about-card about-card-main">
+                <h2>Robert Gonek</h2>
+                <p>Senior Software Engineer based in Kraków, Poland. I've spent over a decade in the .NET ecosystem, building microservices, modernizing legacy systems, and helping teams ship better software.</p>
+                <p>I'm not chasing GitHub stars or building the next big framework. My work is in the trenches — writing tests, drawing C4 diagrams, cleaning up technical debt, and leaving every codebase better than I found it.</p>
             </div>
-            <div class="about-links">
-                <a href="https://github.com/rgonek" target="_blank" class="link-box">
-                    <span class="link-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </span>
-                    <span class="link-text">
-                        <span class="link-label">GitHub</span>
-                        <span class="link-value">@rgonek</span>
-                    </span>
-                    <span class="link-arrow">&rarr;</span>
-                </a>
-                <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" class="link-box">
-                    <span class="link-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </span>
-                    <span class="link-text">
-                        <span class="link-label">LinkedIn</span>
-                        <span class="link-value">/in/robertgonek</span>
-                    </span>
-                    <span class="link-arrow">&rarr;</span>
-                </a>
-            </div>
-        </div>
-        <div class="featured-project">
-            <div class="project-badge">Featured Open Source</div>
-            <div class="project-content">
-                <h3 class="project-title">Ilaro.Admin</h3>
-                <p class="project-desc">Generic admin panel for ASP.NET MVC</p>
-                <div class="project-stats">
-                    <span class="project-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-                        130
-                    </span>
-                    <span class="project-lang">C#</span>
+            <div class="about-card about-card-ai">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
                 </div>
+                <h3>AI-AUGMENTED WORKFLOW</h3>
+                <p>I integrate AI into every stage of development. Not as a gimmick — as a multiplier. From code generation to architecture review, I stay current with every nuance.</p>
             </div>
-            <a href="https://github.com/rgonek/Ilaro.Admin" target="_blank" class="project-link">View Project &rarr;</a>
+            <div class="about-card about-card-cert">
+                <div class="cert-badge">CERTIFIED</div>
+                <h3>AZ-204</h3>
+                <p>Microsoft Azure Developer Associate</p>
+                <span class="cert-date">Since 2021</span>
+            </div>
         </div>
     </section>
 
-    <section id="experience" class="section experience">
-        <div class="section-header">
-            <span class="section-number">02</span>
-            <h2 class="section-title">Experience</h2>
+    <section id="philosophy" class="philosophy">
+        <div class="section-label">02 — PHILOSOPHY</div>
+        <div class="philosophy-statement">
+            <blockquote>
+                "Every task I touch gets two outcomes: the feature delivered, and the codebase improved."
+            </blockquote>
         </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <div class="card-number">01</div>
+                <h3>DOCUMENTATION FIRST</h3>
+                <p>C4 diagrams, ADRs, clear READMEs. If it's not documented, it doesn't exist. Future developers (including future me) deserve context.</p>
+            </div>
+            <div class="philosophy-card">
+                <div class="card-number">02</div>
+                <h3>CLEAN CODE ALWAYS</h3>
+                <p>SOLID principles aren't suggestions. Domain-driven design isn't optional. Every PR should pass the "would I be proud of this in 5 years" test.</p>
+            </div>
+            <div class="philosophy-card">
+                <div class="card-number">03</div>
+                <h3>TEST COVERAGE MATTERS</h3>
+                <p>85%+ coverage on domain and application layers. Unit tests, integration tests, acceptance tests. If it's not tested, it's not done.</p>
+            </div>
+            <div class="philosophy-card">
+                <div class="card-number">04</div>
+                <h3>LEAVE IT BETTER</h3>
+                <p>Boy Scout Rule, always. Touch a file? Improve it. See tech debt? Pay it down. Gradual improvement beats big rewrites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="section-label">03 — EXPERIENCE</div>
         <div class="timeline">
             <div class="timeline-item current">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-period">2025 &mdash; Present</div>
-                    <h3 class="timeline-role">Senior Software Engineer</h3>
-                    <div class="timeline-company">Benefit Systems International S.A.</div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2025 — PRESENT</span>
+                        <span class="timeline-badge">CURRENT</span>
+                    </div>
+                    <h3>Senior Software Engineer</h3>
+                    <h4>Benefit Systems International S.A.</h4>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-period">2021 &mdash; 2025</div>
-                    <h3 class="timeline-role">Senior Full Stack .NET Developer</h3>
-                    <div class="timeline-company">Ultrico</div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2021 — 2025</span>
+                        <span class="timeline-years">3y 10m</span>
+                    </div>
+                    <h3>Senior Full Stack .NET Developer</h3>
+                    <h4>Ultrico</h4>
                     <ul class="timeline-details">
                         <li>Microservice solutions on Azure</li>
-                        <li>Legacy system modernization</li>
-                        <li>.NET version migrations</li>
+                        <li>Legacy modernization & .NET migrations</li>
+                        <li>Unit & integration testing</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-period">2020 &mdash; 2021</div>
-                    <h3 class="timeline-role">Senior Full Stack .NET Developer</h3>
-                    <div class="timeline-company">ITMAGINATION</div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2020 — 2021</span>
+                    </div>
+                    <h3>Senior Full Stack .NET Developer</h3>
+                    <h4>ITMAGINATION</h4>
+                    <ul class="timeline-details">
+                        <li>Code quality mentorship</li>
+                        <li>Solution design & estimation</li>
+                    </ul>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-period">2015 &mdash; 2020</div>
-                    <h3 class="timeline-role">Full Stack .NET Developer</h3>
-                    <div class="timeline-company">Ultrico</div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2015 — 2020</span>
+                        <span class="timeline-years">5y 7m</span>
+                    </div>
+                    <h3>Full Stack .NET Developer</h3>
+                    <h4>Ultrico</h4>
+                    <ul class="timeline-details">
+                        <li>Microservice architecture</li>
+                        <li>SQL scripting & reporting</li>
+                    </ul>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-period">2010 &mdash; 2015</div>
-                    <h3 class="timeline-role">Earlier Roles</h3>
-                    <div class="timeline-company">NovaPraxis, Grupa Manubia, TimeFrame Software, Contempro</div>
-                </div>
-            </div>
-        </div>
-        <div class="cert-box">
-            <div class="cert-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l2-2l2 2l-2-5z"/><circle cx="12" cy="9" r="6"/></svg>
-            </div>
-            <div class="cert-content">
-                <span class="cert-label">Certification</span>
-                <span class="cert-name">AZ-204 Microsoft Azure Developer</span>
-                <span class="cert-date">December 2021</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="philosophy" class="section philosophy">
-        <div class="section-header">
-            <span class="section-number">03</span>
-            <h2 class="section-title">Philosophy</h2>
-        </div>
-        <div class="philosophy-grid">
-            <div class="philosophy-card">
-                <div class="philosophy-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 12h16"/><path d="M12 4v16"/></svg>
-                </div>
-                <h3>Clean Architecture</h3>
-                <p>Every system I build follows proven architectural patterns. C4 diagrams, clear boundaries, and maintainable code.</p>
-            </div>
-            <div class="philosophy-card">
-                <div class="philosophy-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                </div>
-                <h3>Leave It Better</h3>
-                <p>The Boy Scout Rule. Every task includes cleanup. Code quality is not negotiable.</p>
-            </div>
-            <div class="philosophy-card">
-                <div class="philosophy-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                </div>
-                <h3>Documentation First</h3>
-                <p>If it's not documented, it doesn't exist. ADRs, READMEs, and living documentation are part of the deliverable.</p>
-            </div>
-            <div class="philosophy-card highlight">
-                <div class="philosophy-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 12m-3 0a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
-                </div>
-                <h3>AI-Augmented</h3>
-                <p>AI is my force multiplier. I leverage agentic workflows, understand prompt engineering, and stay ahead of the curve.</p>
-            </div>
-        </div>
-        <div class="reading-shelf">
-            <h3 class="shelf-title">Recent Reads</h3>
-            <div class="books">
-                <div class="book" style="--book-color: #dc322f;">
-                    <span class="book-spine">Clean Code</span>
-                </div>
-                <div class="book" style="--book-color: #268bd2;">
-                    <span class="book-spine">Clean Architecture</span>
-                </div>
-                <div class="book" style="--book-color: #859900;">
-                    <span class="book-spine">DevOps Handbook</span>
-                </div>
-                <div class="book" style="--book-color: #b58900;">
-                    <span class="book-spine">Team Topologies</span>
-                </div>
-                <div class="book" style="--book-color: #6c71c4;">
-                    <span class="book-spine">AI Engineering</span>
-                </div>
-                <div class="book" style="--book-color: #2aa198;">
-                    <span class="book-spine">Vibe Coding</span>
-                </div>
-                <div class="book" style="--book-color: #d33682;">
-                    <span class="book-spine">C# in a Nutshell</span>
-                </div>
-                <div class="book" style="--book-color: #cb4b16;">
-                    <span class="book-spine">T-SQL Fundamentals</span>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2010 — 2015</span>
+                    </div>
+                    <h3>Earlier Roles</h3>
+                    <h4>NovaPraxis, Grupa Manubia, TimeFrame Software, Contempro</h4>
+                    <p class="timeline-summary">Foundation years: WPF applications, document management systems, e-commerce data aggregation, statistical survey tools.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="interests" class="section interests">
-        <div class="section-header">
-            <span class="section-number">04</span>
-            <h2 class="section-title">Beyond Code</h2>
+    <section id="reading" class="reading">
+        <div class="section-label">04 — READING LIST</div>
+        <p class="reading-intro">Books that shaped my engineering philosophy:</p>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">UNCLE BOB</span>
+                    <h3>Clean Architecture</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">UNCLE BOB</span>
+                    <h3>Clean Code</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">CHIP HUYEN</span>
+                    <h3>AI Engineering</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">STEVE YEGGE</span>
+                    <h3>Vibe Coding</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">SKELTON & PAIS</span>
+                    <h3>Team Topologies</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">ITZIK BEN-GAN</span>
+                    <h3>T-SQL Fundamentals</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">ALBAHARI</span>
+                    <h3>C# in a Nutshell</h3>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-spine"></div>
+                <div class="book-content">
+                    <span class="book-author">KIM ET AL</span>
+                    <h3>DevOps Handbook</h3>
+                </div>
+            </div>
         </div>
-        <div class="interests-grid">
-            <div class="interest-card">
-                <div class="interest-visual books-visual">
-                    <svg viewBox="0 0 100 100" class="interest-svg">
-                        <rect x="10" y="20" width="15" height="60" fill="var(--red)" rx="2"/>
-                        <rect x="28" y="25" width="12" height="55" fill="var(--blue)" rx="2"/>
-                        <rect x="43" y="15" width="18" height="65" fill="var(--green)" rx="2"/>
-                        <rect x="64" y="22" width="14" height="58" fill="var(--yellow)" rx="2"/>
-                        <rect x="81" y="18" width="10" height="62" fill="var(--violet)" rx="2"/>
+    </section>
+
+    <section class="hobbies">
+        <div class="section-label">05 — OFFLINE</div>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
                     </svg>
                 </div>
-                <h3>Books</h3>
-                <p>Technical literature, architecture patterns, and the occasional chess strategy book.</p>
+                <h3>BOOKS</h3>
+                <p>Technical literature & continuous learning</p>
             </div>
-            <div class="interest-card">
-                <div class="interest-visual climb-visual">
-                    <svg viewBox="0 0 100 100" class="interest-svg">
-                        <path d="M20 90 L40 60 L35 45 L50 30 L60 40 L75 15" stroke="var(--base01)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <circle cx="75" cy="15" r="6" fill="var(--orange)"/>
-                        <circle cx="40" cy="60" r="4" fill="var(--cyan)"/>
-                        <circle cx="50" cy="30" r="4" fill="var(--cyan)"/>
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2L8 8l-3 8 3 1 1 3 8-3 6-6"/>
+                        <path d="M9 15l-2 5"/>
+                        <path d="M15 9l5-2"/>
                     </svg>
                 </div>
-                <h3>Rock Climbing</h3>
-                <p>Problem-solving on vertical terrain. Every route is a puzzle with physical constraints.</p>
+                <h3>ROCK CLIMBING</h3>
+                <p>Problem-solving with physical stakes</p>
             </div>
-            <div class="interest-card">
-                <div class="interest-visual chess-visual">
-                    <svg viewBox="0 0 100 100" class="interest-svg">
-                        <rect x="15" y="15" width="70" height="70" fill="var(--base2)" stroke="var(--base01)" stroke-width="2"/>
-                        <g fill="var(--base01)">
-                            <rect x="15" y="15" width="17.5" height="17.5"/>
-                            <rect x="50" y="15" width="17.5" height="17.5"/>
-                            <rect x="32.5" y="32.5" width="17.5" height="17.5"/>
-                            <rect x="67.5" y="32.5" width="17.5" height="17.5"/>
-                            <rect x="15" y="50" width="17.5" height="17.5"/>
-                            <rect x="50" y="50" width="17.5" height="17.5"/>
-                            <rect x="32.5" y="67.5" width="17.5" height="17.5"/>
-                            <rect x="67.5" y="67.5" width="17.5" height="17.5"/>
-                        </g>
-                        <text x="50" y="55" text-anchor="middle" font-size="24" fill="var(--magenta)">&#9822;</text>
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 3v18"/>
+                        <path d="M15 3v18"/>
+                        <path d="M3 9h18"/>
+                        <path d="M3 15h18"/>
                     </svg>
                 </div>
-                <h3>Chess</h3>
-                <p>Strategic thinking in 64 squares. Pattern recognition meets long-term planning.</p>
+                <h3>CHESS</h3>
+                <p>Strategic thinking & pattern recognition</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-label">06 — CONNECT</div>
+        <div class="contact-content">
+            <h2>LET'S TALK<span class="highlight">.</span></h2>
+            <div class="contact-links">
+                <a href="https://github.com/rgonek" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-link-label">GITHUB</span>
+                    <span class="contact-link-value">rgonek</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/robertgonek/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-link-label">LINKEDIN</span>
+                    <span class="contact-link-value">robertgonek</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-brand">
-                <span class="footer-name">Robert Gonek</span>
-                <span class="footer-title">Senior .NET Engineer</span>
-            </div>
-            <div class="footer-location">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Krak&oacute;w, Poland
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2025 Robert Gonek</span>
+            <span class="footer-name">ROBERT GONEK</span>
+            <span class="footer-year">2025</span>
         </div>
     </footer>
 
