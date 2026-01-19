@@ -38,7 +38,7 @@ function initScrollAnimations() {
 
     // Add animation classes and observe
     const animatedElements = document.querySelectorAll(
-        '.about-card, .philosophy-card, .timeline-item, .book-card, .hobby-card, .contact-link'
+        '.about-card, .philosophy-card, .timeline-item, .skill-card, .project-card, .book-card, .hobby-card, .contact-link'
     );
 
     animatedElements.forEach((el, index) => {

@@ -422,6 +422,20 @@ section {
     z-index: 0;
 }
 
+.skills::after {
+    content: '';
+    position: absolute;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    width: 0;
+    height: 0;
+    border-left: 60px solid var(--purple);
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    opacity: 0.4;
+    z-index: 0;
+}
+
 .projects::after {
     content: '';
     position: absolute;
@@ -429,7 +443,7 @@ section {
     right: var(--space-md);
     width: 70px;
     height: 70px;
-    background-color: var(--purple);
+    background-color: var(--coral);
     border: var(--border-thin);
     transform: rotate(-10deg);
     opacity: 0.5;
@@ -476,9 +490,14 @@ section {
     background-color: var(--blue);
 }
 
-.projects .section-label {
+.skills .section-label {
     background-color: var(--purple);
     color: var(--white);
+}
+
+.projects .section-label {
+    background-color: var(--yellow);
+    color: var(--black);
 }
 
 .reading .section-label {
@@ -802,6 +821,83 @@ section {
 .timeline-summary {
     font-size: 0.85rem;
     opacity: 0.8;
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.skills {
+    background-color: var(--bg-cream-dark);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill-card {
+    background-color: var(--white);
+    border: var(--border);
+    padding: var(--space-md);
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.skill-card:nth-child(1) {
+    background-color: var(--yellow);
+}
+
+.skill-card:nth-child(2) {
+    background-color: var(--blue);
+}
+
+.skill-card:nth-child(3) {
+    background-color: var(--coral);
+    color: var(--white);
+}
+
+.skill-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.05em;
+    padding-bottom: var(--space-xs);
+    border-bottom: var(--border-thin);
+}
+
+.skill-list {
+    list-style: none;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.skill-list li {
+    position: relative;
+    padding-left: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.skill-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.skill-card:nth-child(3) h3 {
+    border-bottom-color: var(--white);
 }
 
 /* ============================================
@@ -1280,6 +1376,7 @@ section {
     .about::before,
     .philosophy::after,
     .experience::before,
+    .skills::after,
     .projects::after,
     .hobbies::before {
         display: none;
