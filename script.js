@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initNavHighlight();
+    initMobileNav();
 });
 
 /* ============================================
@@ -126,6 +127,40 @@ function initNavHighlight() {
     document.head.appendChild(style);
 }
 
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+
+function initMobileNav() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (!navToggle || !navLinks) return;
+
+    navToggle.addEventListener('click', () => {
+        const isActive = navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isActive);
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
 
 /* ============================================
    EASTER EGG: Konami Code
@@ -188,49 +223,3 @@ function activateEasterEgg() {
     }, 2000);
 }
 
-/* ============================================
-   CURSOR TRAIL (subtle)
-   ============================================ */
-
-let mouseX = 0;
-let mouseY = 0;
-let trailElements = [];
-const trailCount = 5;
-
-// Only enable on larger screens
-if (window.innerWidth > 1024) {
-    for (let i = 0; i < trailCount; i++) {
-        const trail = document.createElement('div');
-        trail.style.cssText = `
-            position: fixed;
-            width: ${10 - i * 1.5}px;
-            height: ${10 - i * 1.5}px;
-            background: var(--yellow);
-            border: 2px solid var(--black);
-            pointer-events: none;
-            z-index: 9998;
-            opacity: ${1 - i * 0.2};
-            transition: transform ${0.1 + i * 0.05}s ease;
-        `;
-        document.body.appendChild(trail);
-        trailElements.push(trail);
-    }
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        trailElements.forEach((trail, index) => {
-            setTimeout(() => {
-                trail.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
-            }, index * 30);
-        });
-    });
-}
-
-/* ============================================
-   TYPING EFFECT FOR HERO (optional enhancement)
-   ============================================ */
-
-// Could be enabled for a more dynamic feel
-// Currently disabled to maintain the bold static design
