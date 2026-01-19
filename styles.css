@@ -136,9 +136,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: var(--space-xl) var(--space-md);
     padding-top: calc(var(--space-xl) + 60px);
     position: relative;
+}
+
+.hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .hero-badge {
@@ -149,8 +160,12 @@ body {
     padding: var(--space-xs) var(--space-sm);
     background-color: var(--black);
     color: var(--white);
-    margin-bottom: var(--space-md);
-    animation: slideInLeft 0.6s ease-out;
+}
+
+.hero-badge-location {
+    background-color: var(--white);
+    color: var(--black);
+    border: var(--border-thin);
 }
 
 .hero-title {
@@ -182,6 +197,23 @@ body {
     }
 }
 
+.hero-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+    max-width: 700px;
+    animation: fadeInUp 0.6s ease-out 0.5s backwards;
+}
+
+.hero-intro {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: var(--space-lg);
+    max-width: 600px;
+    animation: fadeInUp 0.6s ease-out 0.6s backwards;
+}
+
 .highlight {
     color: var(--black);
     background-color: var(--yellow);
@@ -195,15 +227,15 @@ body {
     background-color: var(--black);
     padding: 0 0.2em;
     display: inline-block;
-    transform: rotate(1deg);
 }
 
 .hero-meta {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: var(--space-md);
     flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease-out 0.5s backwards;
+    animation: fadeInUp 0.8s ease-out 0.7s backwards;
 }
 
 @keyframes fadeInUp {
@@ -285,6 +317,7 @@ body {
 section {
     padding: var(--space-xl) var(--space-md);
     border-top: var(--border);
+    text-align: center;
 }
 
 .section-label {
@@ -305,6 +338,8 @@ section {
     grid-template-rows: auto auto;
     gap: var(--space-md);
     max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .about-card {
@@ -405,7 +440,7 @@ section {
 
 .philosophy-statement {
     max-width: 900px;
-    margin-bottom: var(--space-lg);
+    margin: 0 auto var(--space-lg);
 }
 
 .philosophy-statement blockquote {
@@ -422,6 +457,8 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-md);
     max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .philosophy-card {
@@ -434,12 +471,8 @@ section {
 }
 
 .philosophy-card:hover {
-    transform: translate(-4px, -4px) rotate(-1deg);
+    transform: translate(-4px, -4px);
     box-shadow: var(--shadow-hover);
-}
-
-.philosophy-card:nth-child(even):hover {
-    transform: translate(-4px, -4px) rotate(1deg);
 }
 
 .card-number {
@@ -470,7 +503,9 @@ section {
 
 .timeline {
     max-width: 800px;
+    margin: 0 auto;
     position: relative;
+    text-align: left;
 }
 
 .timeline::before {
@@ -594,6 +629,132 @@ section {
 }
 
 /* ============================================
+   PROJECTS SECTION
+   ============================================ */
+
+.projects {
+    background-color: var(--bg-cream-dark);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--white);
+    border: var(--border);
+    padding: var(--space-md);
+    box-shadow: var(--shadow);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.15s ease;
+}
+
+.project-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-sm);
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--yellow);
+    border: var(--border-thin);
+    padding: 10px;
+}
+
+.project-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.project-stats {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.project-stat {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background-color: var(--bg-cream);
+    padding: 4px 8px;
+    border: var(--border-thin);
+}
+
+.project-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.project-description {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: var(--space-sm);
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.project-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--black);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--yellow);
+    border: var(--border-thin);
+    transition: all 0.15s ease;
+    align-self: flex-start;
+}
+
+.project-link:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.project-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.15s ease;
+}
+
+.project-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* ============================================
    READING SECTION
    ============================================ */
 
@@ -617,6 +778,8 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--space-md);
     max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .book-card {
@@ -625,21 +788,23 @@ section {
     color: var(--black);
     border: var(--border);
     min-height: 140px;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
     cursor: default;
 }
 
 .book-card:hover {
-    transform: translateY(-8px) rotate(-1deg);
-}
-
-.book-card:nth-child(even):hover {
-    transform: translateY(-8px) rotate(1deg);
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 var(--bg-cream);
 }
 
 .book-spine {
     width: 16px;
     flex-shrink: 0;
+    transition: width 0.15s ease;
+}
+
+.book-card:hover .book-spine {
+    width: 24px;
 }
 
 .book-card:nth-child(1) .book-spine { background-color: var(--yellow); }
@@ -685,6 +850,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-md);
     max-width: 900px;
+    margin: 0 auto;
 }
 
 .hobby-card {
@@ -736,6 +902,7 @@ section {
 
 .contact-content {
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact h2 {

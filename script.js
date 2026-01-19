@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initNavHighlight();
-    initParallaxEffects();
 });
 
 /* ============================================
@@ -127,43 +126,6 @@ function initNavHighlight() {
     document.head.appendChild(style);
 }
 
-/* ============================================
-   PARALLAX EFFECTS
-   ============================================ */
-
-function initParallaxEffects() {
-    // Subtle parallax on hero elements
-    const heroTitle = document.querySelector('.hero-title');
-    const heroBadge = document.querySelector('.hero-badge');
-
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrollY = window.scrollY;
-
-                if (scrollY < window.innerHeight) {
-                    const parallaxAmount = scrollY * 0.3;
-                    const opacityAmount = 1 - (scrollY / window.innerHeight);
-
-                    if (heroTitle) {
-                        heroTitle.style.transform = `translateY(${parallaxAmount}px)`;
-                        heroTitle.style.opacity = Math.max(0, opacityAmount);
-                    }
-
-                    if (heroBadge) {
-                        heroBadge.style.transform = `translateY(${parallaxAmount * 0.5}px)`;
-                    }
-                }
-
-                ticking = false;
-            });
-
-            ticking = true;
-        }
-    });
-}
 
 /* ============================================
    EASTER EGG: Konami Code
